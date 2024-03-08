@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple_memo</title>
+    <link rel="stylesheet" href="/css/sign.css" />
+    <script src="/js/sign.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="signBox">
+          <div class="formBox2">
+            <form class="form2" action="/" method="post">
+              <div class="logoBox2">
+                <img class="logoImg2" src="/img/logo.jpg" alt="logo" />
+              </div>
+              <div class="infoBox2">
+                <label
+                  for="signupId"
+                  style="margin-bottom: 0.2rem; font-size: 0.85rem"
+                  >아이디</label
+                >
+                <input
+                  type="text"
+                  placeholder="아이디"
+                  name="signupId"
+                  id="signupId"
+                />
+                <ul class="idValid">
+                  <li class="idLength hide">아이디는 4~12자 이어야 합니다.</li>
+                  <li class="idUsed hide">이미 사용 중인 아이디 입니다.</li>
+                </ul>
+                <label
+                  for="signupPw"
+                  style="margin-bottom: 0.2rem; font-size: 0.85rem"
+                  >비밀번호</label
+                >
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  name="signupPw"
+                  id="signupPw"
+                  autocomplete="off"
+                />
+                <div class="pwCheck hide">
+                  8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요
+                </div>
+                <label for="signupPwCheck">비밀번호 확인</label>
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  name="signupPwCheck"
+                  id="signupPwCheck"
+                  autocomplete="off"
+                />
+                <div class="pwSame hide">비밀번호가 일치하지 않습니다</div>
+                <label for="signupName">이름</label>
+                <input
+                  type="text"
+                  placeholder="이름"
+                  name="signupName"
+                  id="signupName"
+                />
+
+                <label for="signupTel">핸드폰번호</label>
+                <input
+                  type="text"
+                  placeholder="핸드폰번호"
+                  name="signupTel"
+                  id="signupTel"
+                />
+                <button>회원가입</button>
+              </div>
+              <div>
+                <p>
+                  이미 회원이신가요?
+                  <span class="changeSignIn">로그인</span>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="imgBox">
+            <img class="sign_img" src="/img/sign_img.jpg" alt="sign_img" />
+          </div>
+          <div class="imgBox2">
+            <img class="sign_img" src="/img/sign_img2.jpg" alt="sign_img" />
+          </div>
+          <div class="formBox">
+            <form class="form" action="/board" method="post">
+              <div class="logoBox">
+                <img class="logoImg" src="/img/logo.jpg" alt="logo" />
+              </div>
+              <div class="infoBox">
+                <label for="id" hidden></label>
+                <input type="text" placeholder="아이디" name="id" id="id" />
+                <label for="pw" hidden></label>
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  name="pw"
+                  id="pw"
+                  autocomplete="off"
+                />
+                <button>로그인</button>
+              </div>
+              <div>
+                <p>
+                  회원이 아닌가요?
+                  <span class="changeSignUp">지금 가입하세요.</span>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

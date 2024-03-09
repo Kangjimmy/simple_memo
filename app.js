@@ -8,9 +8,12 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-const boardRouter = require('./routes/board');
+const signRouter = require('./routes/signRouter');
+const boardRouter = require('./routes/boardRouter');
 
+app.use('/', signRouter);
 app.use('/', boardRouter);
 
 app.listen(app.get('port'), () => console.log('server is running..'));

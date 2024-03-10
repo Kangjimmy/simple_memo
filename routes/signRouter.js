@@ -1,4 +1,5 @@
 const express = require('express');
+const crypto = require('crypto');
 const signRouter = express.Router();
 const conn = require('../utils/mysqlConnection');
 
@@ -23,5 +24,22 @@ signRouter.post('/idCheck', (req, res) => {
     }
   );
 });
-
+signRouter.post('/signup', (req, res) => {
+  const pw = crypto
+    .createHash('sha256')
+    .update(req.body.signupPw)
+    .digest('hex');
+  const { signupId: id, signupName: name, signupTel: tel } = req.body;
+  conn.query(
+    'insert into member(id, pw, name, tel, reg_date) values(?,?,?,?,now())',
+    [id, pw, name, tel],
+    (err, results, fields) => {
+      if (!err) {
+        res.render('signupSuccess');
+      } else {
+        console.log(err);
+      }
+    }
+  );
+});
 module.exports = signRouter;

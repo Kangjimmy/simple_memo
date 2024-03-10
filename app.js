@@ -15,5 +15,8 @@ const boardRouter = require('./routes/boardRouter');
 
 app.use('/', signRouter);
 app.use('/', boardRouter);
+app.use((req, res) => {
+  res.status(404).send('not found');
+});
 
 app.listen(app.get('port'), () => console.log('server is running..'));

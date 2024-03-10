@@ -42,4 +42,26 @@ signRouter.post('/signup', (req, res) => {
     }
   );
 });
+signRouter.post('/signin', (req, res) => {
+  const id = req.body.id.trim();
+  const pw = req.body.pw;
+  let hashedPw = crypto.createHash('sha256').update(pw).digest('hex');
+
+  conn.query(
+    'select id, pw from member where id = ? and pw = ?',
+    [id, hashedPw],
+    (err, results, fields) => {
+      if (!err) {
+        if (results.length != 0) {
+          req.session.id = id;
+          req.session.isSigned = true;
+          res.send({ signin: true });
+        } else {
+          res.send({ signin: false });
+        }
+      }
+    }
+  );
+});
+
 module.exports = signRouter;

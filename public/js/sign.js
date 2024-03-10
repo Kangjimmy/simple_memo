@@ -20,6 +20,9 @@ changeSignIn.addEventListener('click', (e) => {
   formBox2.classList.toggle('active');
 });
 
+/**
+ * 회원가입 과정
+ */
 const signupId = document.querySelector('#signupId');
 const idCheck = document.querySelector('.idCheck');
 const idUsed = document.querySelector('.idUsed');
@@ -154,6 +157,32 @@ signupForm.addEventListener('submit', (e) => {
   if (isOkValid) {
     signupForm.submit();
   }
+});
+
+/**
+ * 로그인 과정
+ */
+const form = document.querySelector('.form');
+const signinCheck = document.querySelector('.signinCheck');
+form.addEventListener('submit', (e) => {
+  console.log('submit!!');
+  e.preventDefault();
+  const id = document.querySelector('#id').value;
+  const pw = document.querySelector('#pw').value;
+  fetch('/signin', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id, pw }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.signin) {
+        form.submit();
+      } else {
+        signinCheck.classList.remove('hide');
+      }
+    })
+    .catch((err) => console.log(err));
 });
 
 async function checkIdDup(id) {

@@ -130,7 +130,8 @@ label {
 .pwCheck,
 .pwSame,
 .nameCheck,
-.telCheck {
+.telCheck,
+.signinCheck {
   font-size: 0.8rem;
   color: var(--color-red);
 }
@@ -139,6 +140,7 @@ label {
 .pwCheck.hide,
 .pwSame.hide,
 .nameCheck.hide,
-.telCheck.hide {
+.telCheck.hide,
+.signinCheck.hide {
   display: none;
 }

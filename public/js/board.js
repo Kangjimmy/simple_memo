@@ -1,15 +1,17 @@
 const memberBtn = document.querySelector('.memberBtn');
 const board = document.querySelector('.board');
 
+// init
+selectMemo();
+
+// delete
 board.addEventListener('dblclick', (e) => {
   if (e.target.tagName === 'TEXTAREA') {
     deleteMemo(e.target.dataset.no, e.target.parentElement);
   }
 });
 
-// init
-selectMemo();
-
+// add
 const addMemo = document.querySelector('.add_memo');
 addMemo.addEventListener('click', () => {
   fetch('/board/addMemo', {
@@ -22,10 +24,37 @@ addMemo.addEventListener('click', () => {
       if (!data) {
         console.log('add memo failed');
       } else {
-        board.appendChild(createMemo({ no: data.insertId, memo: '' }));
+        const createdNode = createMemo({ no: data.insertId, memo: '' });
+        board.appendChild(createdNode);
       }
     });
 });
+
+// modify
+let timeoutId;
+
+board.addEventListener('input', (e) => {
+  if (e.target.tagName === 'TEXTAREA') {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      updateMemo(e.target.dataset.no, e.target.value);
+    }, 1000);
+  }
+});
+
+function updateMemo(no, text) {
+  fetch('/board/updateMemo', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ no, text }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.result) {
+        console.log('update error');
+      }
+    });
+}
 
 function selectMemo() {
   // board
@@ -64,7 +93,7 @@ function createMemo(info) {
   textarea.setAttribute('class', 'textarea');
   textarea.setAttribute('spellcheck', 'false');
   textarea.dataset.no = info.no;
-  textarea.innerText = info.memo;
+  textarea.textContent = info.memo;
 
   memoDiv.appendChild(textarea);
 

@@ -35,6 +35,7 @@ boardRouter.post('/getMemo', (req, res) => {
     }
   );
 });
+
 boardRouter.post('/addMemo', (req, res) => {
   const id = req.session.user_id;
 
@@ -48,6 +49,7 @@ boardRouter.post('/addMemo', (req, res) => {
     }
   );
 });
+
 boardRouter.delete('/deleteMemo', (req, res) => {
   const id = req.session.user_id;
   const no = req.body.no;
@@ -58,6 +60,21 @@ boardRouter.delete('/deleteMemo', (req, res) => {
     (err, results, fields) => {
       if (!err) {
         res.send('success');
+      }
+    }
+  );
+});
+
+boardRouter.post('/updateMemo', (req, res) => {
+  const id = req.session.user_id;
+  let text = req.body.text;
+  let no = req.body.no;
+  conn.query(
+    'update memo set memo = ?, mod_date = now() where id=? and no=?',
+    [text, id, no],
+    (err, results, fields) => {
+      if (!err) {
+        res.send({ result: true });
       }
     }
   );

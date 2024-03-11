@@ -4,11 +4,11 @@ const signRouter = express.Router();
 const conn = require('../utils/mysqlConnection');
 
 signRouter.get('/', (req, res) => {
-  res.redirect('sign');
-});
-
-signRouter.get('/sign', (req, res) => {
-  res.render('sign');
+  if (req.session.isSigned) {
+    res.redirect('/board');
+  } else {
+    res.render('sign');
+  }
 });
 
 signRouter.post('/idCheck', (req, res) => {
@@ -53,7 +53,7 @@ signRouter.post('/signin', (req, res) => {
     (err, results, fields) => {
       if (!err) {
         if (results.length != 0) {
-          req.session.id = id;
+          req.session.user_id = id;
           req.session.isSigned = true;
           res.send({ signin: true });
         } else {

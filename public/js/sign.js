@@ -169,7 +169,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const id = document.querySelector('#id').value;
   const pw = document.querySelector('#pw').value;
-  fetch('/signin', {
+  fetch('/sign/signin', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id, pw }),
@@ -186,7 +186,7 @@ form.addEventListener('submit', (e) => {
 });
 
 async function checkIdDup(id) {
-  const res = fetch('/idCheck', {
+  const res = fetch('/sign/idCheck', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id }),

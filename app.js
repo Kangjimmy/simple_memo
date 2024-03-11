@@ -22,8 +22,23 @@ app.use(express.json());
 const signRouter = require('./routes/signRouter');
 const boardRouter = require('./routes/boardRouter');
 
-app.use('/', signRouter);
-app.use('/', boardRouter);
+app.get('/', (req, res) => {
+  if (req.session.isSigned) {
+    res.redirect('/board');
+  } else {
+    res.redirect('/sign');
+  }
+});
+const auth = (req, res, next) => {
+  const { isSigned } = req.session;
+  if (isSigned != undefined) {
+    next();
+  } else {
+    res.redirect('/sign');
+  }
+};
+app.use('/sign', signRouter);
+app.use('/board', auth, boardRouter);
 app.use((req, res) => {
   res.status(404).send('not found');
 });

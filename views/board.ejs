@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/board.css" />
+    <script src="/js/board.js" defer></script>
     <title>simple_memo</title>
   </head>
   <body>
@@ -30,52 +31,24 @@
           <img class="logoImg" src="/img/logo.jpg" alt="logo" />
         </div>
         <div class="memberInfo">
-          <span class="memberName">id님 환영합니다.</span>
-          <button class="memberBtn">로그아웃</button>
+          <form action="/board/logout" method="post">
+            <span class="memberName"><%= id %>님 환영합니다.</span>
+            <button class="memberBtn">로그아웃</button>
+          </form>
         </div>
       </header>
       <main>
         <div class="board">
           <div class="add_memo"><i class="fa-solid fa-plus"></i></div>
           <div class="memo">
-            <textarea
-              name=""
-              id=""
-              class="textarea"
-              spellcheck="false"
-            ></textarea>
-          </div>
-          <div class="memo">
-            <textarea
-              name=""
-              id=""
-              class="textarea"
-              spellcheck="false"
-            ></textarea>
-          </div>
-          <div class="memo">
-            <textarea
-              name=""
-              id=""
-              class="textarea"
-              spellcheck="false"
-            ></textarea>
-          </div>
-          <div class="memo">
-            <textarea
-              name=""
-              id=""
-              class="textarea"
-              spellcheck="false"
-            ></textarea>
-          </div>
-          <div class="memo">
-            <textarea
-              name=""
-              id=""
-              class="textarea"
-              spellcheck="false"
-            ></textarea>
+            <form action="/board">
+              <textarea
+                name=""
+                id=""
+                class="textarea"
+                spellcheck="false"
+              ></textarea>
+            </form>
           </div>
         </div>
       </main>

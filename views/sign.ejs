@@ -23,7 +23,7 @@
       <div class="container">
         <div class="signBox">
           <div class="formBox2">
-            <form class="form2" action="/" method="post">
+            <form class="form2" action="/sign/signup" method="post">
               <div class="logoBox2">
                 <img class="logoImg2" src="/img/logo.jpg" alt="logo" />
               </div>
@@ -40,7 +40,9 @@
                   id="signupId"
                 />
                 <ul class="idValid">
-                  <li class="idLength hide">아이디는 4~12자 이어야 합니다.</li>
+                  <li class="idCheck hide">
+                    4~12자의 영문자, 숫자만 사용 가능합니다.
+                  </li>
                   <li class="idUsed hide">이미 사용 중인 아이디 입니다.</li>
                 </ul>
                 <label
@@ -56,17 +58,17 @@
                   autocomplete="off"
                 />
                 <div class="pwCheck hide">
-                  8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요
+                  8~16자의 영문 대소문자, 숫자, 특수문자를 사용해야 합니다.
                 </div>
                 <label for="signupPwCheck">비밀번호 확인</label>
                 <input
                   type="password"
-                  placeholder="비밀번호"
+                  placeholder="비밀번호 확인"
                   name="signupPwCheck"
                   id="signupPwCheck"
                   autocomplete="off"
                 />
-                <div class="pwSame hide">비밀번호가 일치하지 않습니다</div>
+                <div class="pwSame hide">비밀번호가 일치하지 않습니다.</div>
                 <label for="signupName">이름</label>
                 <input
                   type="text"
@@ -74,7 +76,6 @@
                   name="signupName"
                   id="signupName"
                 />
-
                 <label for="signupTel">핸드폰번호</label>
                 <input
                   type="text"
@@ -82,7 +83,11 @@
                   name="signupTel"
                   id="signupTel"
                 />
-                <button>회원가입</button>
+                <div class="nameCheck hide">
+                  이름: 한글, 영문 대소문자를 사용해야 합니다.
+                </div>
+                <div class="telCheck hide">번호: 잘못된 휴대폰번호 입니다.</div>
+                <button class="signupBtn">회원가입</button>
               </div>
               <div>
                 <p>
@@ -114,6 +119,9 @@
                   id="pw"
                   autocomplete="off"
                 />
+                <div class="signinCheck hide">
+                  아이디 혹은 비밀번호가 맞지 않습니다.
+                </div>
                 <button>로그인</button>
               </div>
               <div>

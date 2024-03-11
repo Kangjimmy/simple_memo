@@ -72,6 +72,7 @@ body {
 .infoBox2 {
   display: flex;
   flex-direction: column;
+  min-width: 325px;
 }
 .logoImg {
   width: 130px;
@@ -127,13 +128,19 @@ label {
 }
 .idValid,
 .pwCheck,
-.pwSame {
+.pwSame,
+.nameCheck,
+.telCheck,
+.signinCheck {
   font-size: 0.8rem;
   color: var(--color-red);
 }
-.idLength.hide,
+.idCheck.hide,
 .idUsed.hide,
 .pwCheck.hide,
-.pwSame.hide {
+.pwSame.hide,
+.nameCheck.hide,
+.telCheck.hide,
+.signinCheck.hide {
   display: none;
 }

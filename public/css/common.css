@@ -1,0 +1,32 @@
+:root {
+  --color-background: #085466;
+  --color-background3: #131b32;
+  --color-scrollbar: #131b325e;
+  --color-red: #ff3333;
+  --color-record: #ea4335;
+  --color-memo1: #cde9ff;
+  --color-memo2: #fecce5;
+  --color-memo3: #fff2ab;
+  --color-memo4: #ccf1c5;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}

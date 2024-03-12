@@ -17,6 +17,28 @@
   align-items: center;
   padding: 0.5rem 1rem;
 }
+.memberInfoForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.memberInfoBox {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  cursor: default;
+}
+
+.memberBtn {
+  border-style: none;
+  background-color: var(--color-background3);
+  color: white;
+  width: 80px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .logoBox {
   width: 80px;

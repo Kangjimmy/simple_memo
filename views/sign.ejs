@@ -19,6 +19,7 @@
     <script src="/js/sign.js" defer></script>
   </head>
   <body>
+    <div class="background2"></div>
     <main class="main">
       <div class="container">
         <div class="signBox">
@@ -28,11 +29,7 @@
                 <img class="logoImg2" src="/img/logo.jpg" alt="logo" />
               </div>
               <div class="infoBox2">
-                <label
-                  for="signupId"
-                  style="margin-bottom: 0.2rem; font-size: 0.85rem"
-                  >아이디</label
-                >
+                <label for="signupId">아이디</label>
                 <input
                   type="text"
                   placeholder="아이디"
@@ -45,11 +42,7 @@
                   </li>
                   <li class="idUsed hide">이미 사용 중인 아이디 입니다.</li>
                 </ul>
-                <label
-                  for="signupPw"
-                  style="margin-bottom: 0.2rem; font-size: 0.85rem"
-                  >비밀번호</label
-                >
+                <label for="signupPw">비밀번호</label>
                 <input
                   type="password"
                   placeholder="비밀번호"
@@ -87,7 +80,13 @@
                   이름: 한글, 영문 대소문자를 사용해야 합니다.
                 </div>
                 <div class="telCheck hide">번호: 잘못된 휴대폰번호 입니다.</div>
-                <button class="signupBtn">회원가입</button>
+                <button class="signupBtn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  회원가입
+                </button>
               </div>
               <div>
                 <p>
@@ -122,7 +121,13 @@
                 <div class="signinCheck hide">
                   아이디 혹은 비밀번호가 맞지 않습니다.
                 </div>
-                <button>로그인</button>
+                <button class="signinBtn btn1">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  로그인
+                </button>
               </div>
               <div>
                 <p>

@@ -4,7 +4,6 @@ const boardRouter = express.Router();
 
 boardRouter.get('/', (req, res) => {
   let id = req.session.user_id;
-  console.log(id);
   res.render('board', { id });
 });
 

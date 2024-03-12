@@ -1,9 +1,13 @@
 .container {
+  position: relative;
   min-height: 100vh;
   background-color: var(--color-background3);
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(4px);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
@@ -77,6 +81,38 @@
 /* 스크롤바 뒷 배경 설정*/
 .textarea::-webkit-scrollbar-track {
   background-color: #cacaca;
+}
+
+/* 녹음 */
+.record {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: var(--color-record);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+
+.record.active {
+  color: white;
+  background-color: var(--color-record);
+}
+
+.record.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.record.inactive:active {
+  background-color: rgba(210, 210, 210, 0.9);
 }
 
 @media screen and (max-width: 1536px) {

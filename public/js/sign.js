@@ -152,7 +152,6 @@ signupForm.addEventListener('submit', (e) => {
   if (!infoValidObj.idChecked && !infoValidObj.idUsed) {
     classArr[1].classList.add('hide');
   }
-  console.log(infoValidObj);
 
   if (isOkValid) {
     signupForm.submit();

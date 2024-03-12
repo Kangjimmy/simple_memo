@@ -1,0 +1,108 @@
+body {
+  background: url('../img/background2.jpg') no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 10.8rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+}
+
+.checkIcon {
+  font-size: 5rem;
+  color: var(--color-background3);
+}
+
+.container p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-background3);
+}
+
+.loginBtn {
+  margin-top: 1rem;
+  border-style: none;
+  width: 100px;
+  height: 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginBtn {
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.loginBtn span {
+  position: absolute;
+  display: block;
+}
+
+.loginBtn:hover {
+  color: white;
+  background-color: var(--color-background3);
+  box-shadow: 0 0 5px var(--color-background3),
+    0 0 10px var(--color-background3), 0 0 20px var(--color-background3);
+  transition-delay: 0.5s;
+}
+/* top */
+.loginBtn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-background3));
+}
+.loginBtn:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.4s;
+}
+/* right */
+.loginBtn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--color-background3));
+}
+.loginBtn:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.4s;
+  transition-delay: 0.1s;
+}
+/* bottom */
+.loginBtn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--color-background3));
+}
+.loginBtn:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+/* left */
+.loginBtn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--color-background3));
+}
+.loginBtn:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.4s;
+  transition-delay: 0.3s;
+}

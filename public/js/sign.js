@@ -1,6 +1,8 @@
 const changeSignUp = document.querySelector('.changeSignUp');
 const imgBox2 = document.querySelector('.imgBox2');
 const formBox = document.querySelector('.formBox');
+const main = document.querySelector('.main');
+const background2 = document.querySelector('.background2');
 
 const changeSignIn = document.querySelector('.changeSignIn');
 const imgBox = document.querySelector('.imgBox');
@@ -11,6 +13,7 @@ changeSignUp.addEventListener('click', (e) => {
   formBox.classList.toggle('active');
   imgBox.classList.toggle('active');
   formBox2.classList.toggle('active');
+  background2.style.visibility = 'visible';
 });
 
 changeSignIn.addEventListener('click', (e) => {
@@ -18,6 +21,7 @@ changeSignIn.addEventListener('click', (e) => {
   formBox.classList.toggle('active');
   imgBox.classList.toggle('active');
   formBox2.classList.toggle('active');
+  background2.style.visibility = 'hidden';
 });
 
 /**

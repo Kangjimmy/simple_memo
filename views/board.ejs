@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/board.css" />
 
-    <script src="/js/webSpeech.js" defer></script>
     <script src="/js/board.js" defer></script>
+    <script src="/js/webSpeech.js" defer></script>
     <title>simple_memo</title>
   </head>
   <body>
@@ -41,7 +41,15 @@
       </header>
       <main>
         <div class="board">
-          <div class="add_memo"><i class="fa-solid fa-plus"></i></div>
+          <div class="add_memo" data-color="1">
+            <div class="colorBox1">
+              <div class="color1 add_selected" data-color="1"></div>
+              <div class="color2" data-color="2"></div>
+              <div class="color3" data-color="3"></div>
+              <div class="color4" data-color="4"></div>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+          </div>
         </div>
       </main>
       <div class="record inactive"><i class="fa-solid fa-microphone"></i></div>

@@ -16,6 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  z-index: 9;
 }
 .memberInfoForm {
   display: flex;
@@ -63,7 +64,84 @@
   min-height: 280px;
 }
 
+.colorBox1 {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: flex;
+  gap: 3px;
+}
+
+.colorBox {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+}
+
+.colorBox.active {
+  opacity: 1;
+}
+
+.add_memo > .colorBox1 div {
+  opacity: 0.4;
+}
+.add_memo > .colorBox1 div:hover {
+  opacity: 0.9;
+}
+
+.add_memo > .colorBox1 div.add_selected {
+  opacity: 0.9;
+}
+
+.colorBox1 div,
+.colorBox div {
+  width: 15px;
+  height: 15px;
+}
+.color1 {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  background-color: var(--color-memo1);
+}
+.color2 {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  background-color: var(--color-memo2);
+}
+.color3 {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  background-color: var(--color-memo3);
+}
+.color4 {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  background-color: var(--color-memo4);
+}
+.color1,
+.color2,
+.color3,
+.color4 {
+  opacity: 0.4;
+}
+.color1.over,
+.color2.over,
+.color3.over,
+.color4.over {
+  opacity: 0.9;
+}
+.color1.memo_selected,
+.color2.memo_selected,
+.color3.memo_selected,
+.color4.memo_selected {
+  opacity: 0.9;
+}
+
 .add_memo {
+  position: relative;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -76,7 +154,25 @@
 }
 
 .memo {
+  position: relative;
+  background-color: var(--color-memo1);
+}
+
+.memo.color1 {
+  opacity: 1;
+  background-color: var(--color-memo1);
+}
+.memo.color2 {
+  opacity: 1;
+  background-color: var(--color-memo2);
+}
+.memo.color3 {
+  opacity: 1;
   background-color: var(--color-memo3);
+}
+.memo.color4 {
+  opacity: 1;
+  background-color: var(--color-memo4);
 }
 
 .textarea {

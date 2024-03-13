@@ -52,17 +52,22 @@ function recordVoice(recognition) {
 }
 
 function fetchCreateMemo() {
+  const addMemo = document.querySelector('.add_memo');
   fetch('/board/addMemo', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({}),
+    body: JSON.stringify({ memo_color: addMemo.dataset.color }),
   })
     .then((res) => res.json())
     .then((data) => {
       if (!data) {
         console.log('add memo failed');
       } else {
-        const createdNode = createMemo({ no: data.insertId, memo: '' });
+        const createdNode = createMemo({
+          no: data.insertId,
+          memo_color: addMemo.dataset.color,
+          memo: '',
+        });
         board.appendChild(createdNode);
       }
     });

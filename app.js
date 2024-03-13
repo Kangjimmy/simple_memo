@@ -40,7 +40,7 @@ const auth = (req, res, next) => {
 app.use('/sign', signRouter);
 app.use('/board', auth, boardRouter);
 app.use((req, res) => {
-  res.status(404).send('not found');
+  res.status(404).render('notFound');
 });
 
 app.listen(app.get('port'), () => console.log('server is running...'));
